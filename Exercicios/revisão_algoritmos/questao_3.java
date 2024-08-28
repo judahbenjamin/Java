@@ -9,36 +9,66 @@
 package revisão_algoritmos;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class questao_3 {
     public static void main(String[] args) {
-        Scanner lendo = new Scanner(System.in);
-
-        int numero;
-        float peso;
-        int quant_bois = 0;
-        float pesos[];
-        int bois = 0;
-        int answ;
-        boolean cont = true;
-    
-        while(cont == true){
-            System.out.printf("NÚMERO: ");
-            numero = lendo.nextInt();
-
-            System.out.printf("PESO DO BOI: ");
-            peso = lendo.nextFloat();
-
-            System.out.printf("Deseja continuar? (S - 1) ; (N - 0) ");
-            answ = lendo.nextInt();
-
-            if(answ == 0){
-                System.out.println("ENCERRADO...");
+        System.out.println("-----> Balanço do Rancho Faro <------- ");
+        Scanner scanner = new Scanner(System.in);
+        
+        int num_boi = 0;
+        float peso_boi = 0;
+        boolean chave = true;
+        int contador = 0;
+        float tot_peso = 0;
+        int num_pesado = 0;
+        float mais_pesado = 0;
+        int num_leve = 0;
+        float mais_leve = 0;
+        
+        while(chave){
+            System.out.printf("Número do boi: ");
+            num_boi = scanner.nextInt();
+            
+            if(num_boi==0){
+                for(int c = 0; c <= 10; c++){
+                    System.out.println("-");
+                }
+                System.out.println();
                 break;
             }
+            
+            System.out.printf("Peso do boi: ");
+            peso_boi = scanner.nextFloat();
+            tot_peso += peso_boi;
+            
+            if(contador == 0){
+                num_pesado = num_leve = num_boi;
+                mais_pesado = mais_leve = peso_boi;
+            }
+            
+            if(peso_boi > mais_pesado){
+                mais_pesado = peso_boi;
+                num_pesado = num_boi;
+            }
+            
+            if(peso_boi < mais_leve){
+                mais_leve = peso_boi;
+                num_leve = num_boi;
+            }
+            
+            contador++;
+            for(int c = 0; c <= 30; c++){
+                System.out.println("-");
+            }
+            System.out.println();
         }
-
-
+        float media = tot_peso/contador;
+        
+        System.out.println("Quantidade de bois: " + contador);
+        System.out.println("Total peso dos bois: " + tot_peso);
+        System.out.println("Média peso dos bois: " + media);
+        System.out.println("O boi mais pesado foi o n° " + num_leve +" com peso de " + mais_leve);
     }
 
 }
