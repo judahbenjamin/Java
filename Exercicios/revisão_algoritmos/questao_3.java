@@ -68,7 +68,8 @@ public class questao_3 {
         System.out.println("Quantidade de bois: " + contador);
         System.out.println("Total peso dos bois: " + tot_peso);
         System.out.println("Média peso dos bois: " + media);
-        System.out.println("O boi mais pesado foi o n° " + num_leve +" com peso de " + mais_leve);
+        System.out.println("O boi mais pesado foi o n° " + num_pesado +" com peso de " + mais_pesado);
+        System.out.println("O boi mais leve foi o n° " + num_leve + " com peso de " + mais_leve);
     }
 
 }
