@@ -1,27 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package revisao_algoritmos;
+// 3 – Faça um programa que leia o número e o peso de um boi, a leitura encerra quando o
+// número digitado for 0 (zero) e informe:
+// a) Quantos bois foram digitados;
+// b) Qual o total de peso dos bois;
+// c) Qual a média de peso dos bois;
+// d) Qual o número e o peso do boi mais pesado; e
+// e) Qual o número e o peso do boi mais leve.
 
-/**
- *
- * Judah Benjamin - 22/08/24
- */
-
-// 3 – Faça um programa que leia o número e o peso de um boi, a leitura encerra quando o número digitado for 0 (zero) e informe:
-// a)	Quantos bois foram digitados;
-// b)	Qual o total de peso dos bois;
-// c)	Qual a média de peso dos bois;
-// d)	Qual o número e o peso do boi mais pesado; e
-// e)	Qual o número e o peso do boi mais leve.
+package revisão_algoritmos;
 
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class quest_3 {
-    public static void main (String[] args){
+public class questao_3 {
+    public static void main(String[] args) {
         System.out.println("-----> Balanço do Rancho Faro <------- ");
         Scanner scanner = new Scanner(System.in);
         
@@ -77,7 +68,8 @@ public class quest_3 {
         System.out.println("Quantidade de bois: " + contador);
         System.out.println("Total peso dos bois: " + tot_peso);
         System.out.println("Média peso dos bois: " + media);
-        System.out.println("O boi mais pesado foi o n°" + num_leve +" com peso de " + mais_leve);
-        
+        System.out.println("O boi mais pesado foi o n° " + num_pesado +" com peso de " + mais_pesado);
+        System.out.println("O boi mais leve foi o n° " + num_leve + " com peso de " + mais_leve);
     }
+
 }
