@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package atividade12;
 
 /**
  *
- * @author Aluno
+ * Por Judah Benjamin,
+ * 19/09/2024
  */
 
 import javax.swing.*;
@@ -132,6 +128,8 @@ public class formulario {
         botao.setText("Enviar");
         botao.setFont(new Font("Arial",Font.BOLD,20));
         botao.setBounds(240,840,140,50);
+        botao.setBackground(Color.BLUE);
+        botao.setForeground(Color.WHITE);
         form.add(botao);
         
         form.setVisible(true);
