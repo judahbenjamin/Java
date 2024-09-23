@@ -20,7 +20,7 @@ public class JInternal {
         final JInternalFrame telinha1 = new JInternalFrame("Tela Interna 1", true, true, true, true);
         final JInternalFrame telinha2 = new JInternalFrame("Tela Interna 2", true, true, true, true);
         final JInternalFrame telinha3 = new JInternalFrame("Tela Interna 3", true, true, true, true);
-        final JInternalFrame telinha4 = new JInternalFrame("Tela Interna 3", true, true, true, true);
+        final JInternalFrame telinha4 = new JInternalFrame("Tela Interna 4", true, true, true, true);
 
         telinha1.setBounds(0, 0, 400, 500);
         telinha2.setBounds(0, 0, 400, 500);
@@ -55,10 +55,12 @@ public class JInternal {
 
         t1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                
                 telinha1.show();
+                JFrame tela1 = new JFrame("Tela Calculadora");
                 telinha1.setBounds(90, 90, 410, 550);
                 telinha1.getContentPane().setBackground(Color.WHITE);
-                telinha1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                tela1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 telinha1.setLayout(null);
 
                 JTextField caixa = new JTextField();
@@ -183,9 +185,11 @@ public class JInternal {
 
         t2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame telinha2 = new JFrame("Telex");
+                telinha2.show();
+                JFrame tela2 = new JFrame("Telex");
                 JTabbedPane tabs = new JTabbedPane(JTabbedPane.TOP);
                 telinha2.setBounds(100, 100, 800, 600);
+                tela2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 tabs.setBounds(10, 10, 770, 550);
                 JPanel painel1 = new JPanel();
                 painel1.setBackground(Color.RED);
@@ -201,13 +205,14 @@ public class JInternal {
 
         t3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                telinha3.show();
                 JFrame tela = new JFrame("Tabelas");
-                tela.setBounds(0, 0, 1024, 768);
+                telinha3.setBounds(0, 0, 600, 600);
                 JTable tabela = new JTable();
                 tabela.setBounds(10, 10, 200, 400);
-                tela.add(tabela);
+                telinha3.add(tabela);
 
-                String[] colunas = { "Nome", "Salário" };
+                String[] colunas = { "Nome", "Salário", "Sexo", "Profissão", "Faixa Etária" };
                 DefaultTableModel modelo = (DefaultTableModel) (new DefaultTableModel() {
                     public boolean isCellEditable(int row, int column) {
                         return false;
@@ -217,43 +222,62 @@ public class JInternal {
                 modelo.setColumnIdentifiers(colunas);
                 modelo.setRowCount(0);
 
-                Object[] objetos = new Object[2];
+                Object[] objetos = new Object[5];
 
                 objetos[0] = "Zé das Couves";
                 objetos[1] = "1000";
+                objetos[2] = "Masculino";
+                objetos[3] = "Engenheiro";
+                objetos[4] = "Adulto";
                 modelo.addRow(objetos);
+                
                 objetos[0] = "Silvio Santos";
                 objetos[1] = "50000";
+                objetos[2] = "Masculino";
+                objetos[3] = "Apresentador";
+                objetos[4] = "Adulto";
                 modelo.addRow(objetos);
+                
                 objetos[0] = "Lula-lá";
                 objetos[1] = "12000";
+                objetos[2] = "Masculino";
+                objetos[3] = "Mané";
+                objetos[4] = "Velho";
                 modelo.addRow(objetos);
+                
                 objetos[0] = "Fulano de tal";
                 objetos[1] = "9000";
+                objetos[2] = "Masculino";
+                objetos[3] = "Policial";
+                objetos[4] = "Jovem";
                 modelo.addRow(objetos);
+                
                 objetos[0] = "Ciclano";
                 objetos[1] = "10900";
+                objetos[2] = "Masculino";
+                objetos[3] = "Sargento";
+                objetos[4] = "Adulto";
                 modelo.addRow(objetos);
 
                 tabela.setModel(modelo);
-                tela.setLayout(null);
-                tela.setVisible(true);
+                telinha3.setLayout(null);
+                telinha3.setVisible(true);
             }
         });
 
         t4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame form = new JFrame();
-                form.setBounds(300, 300, 630, 1000);
-                form.getContentPane().setBackground(Color.WHITE);
-                form.setLayout(null);
+                telinha4.show();
+                telinha4.setBounds(300, 300, 630, 1000);
+                telinha4.getContentPane().setBackground(Color.WHITE);
+                telinha4.setLayout(null);
 
                 JLabel titulo = new JLabel();
                 titulo.setText("Cadastro de funcionários");
                 titulo.setBounds(70, 0, 500, 100);
                 titulo.setFont(new Font("Arial", Font.BOLD, 38));
                 titulo.setForeground(Color.black);
-                form.add(titulo);
+                telinha4.add(titulo);
 
                 JLabel matricula = new JLabel();
                 JTextField campo_matricula = new JTextField();
@@ -261,8 +285,8 @@ public class JInternal {
                 matricula.setBounds(70, 70, 500, 100);
                 matricula.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_matricula.setBounds(70, 150, 468, 40);
-                form.add(matricula);
-                form.add(campo_matricula);
+                telinha4.add(matricula);
+                telinha4.add(campo_matricula);
 
                 JLabel nome = new JLabel();
                 JTextField campo_nome = new JTextField();
@@ -270,8 +294,8 @@ public class JInternal {
                 nome.setBounds(70, 170, 500, 100);
                 nome.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_nome.setBounds(70, 250, 468, 40);
-                form.add(nome);
-                form.add(campo_nome);
+                telinha4.add(nome);
+                telinha4.add(campo_nome);
 
                 JLabel data = new JLabel();
                 JTextField campo_data = new JTextField();
@@ -279,8 +303,8 @@ public class JInternal {
                 data.setBounds(70, 270, 500, 100);
                 data.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_data.setBounds(70, 350, 468, 40);
-                form.add(data);
-                form.add(campo_data);
+                telinha4.add(data);
+                telinha4.add(campo_data);
 
                 JLabel rg = new JLabel();
                 JTextField campo_rg = new JTextField();
@@ -288,8 +312,8 @@ public class JInternal {
                 rg.setBounds(70, 370, 500, 100);
                 rg.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_rg.setBounds(70, 450, 220, 40);
-                form.add(rg);
-                form.add(campo_rg);
+                telinha4.add(rg);
+                telinha4.add(campo_rg);
 
                 JLabel cpf = new JLabel();
                 JTextField campo_cpf = new JTextField();
@@ -297,8 +321,8 @@ public class JInternal {
                 cpf.setBounds(320, 370, 500, 100);
                 cpf.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_cpf.setBounds(320, 450, 220, 40);
-                form.add(cpf);
-                form.add(campo_cpf);
+                telinha4.add(cpf);
+                telinha4.add(campo_cpf);
 
                 JLabel endereco = new JLabel();
                 JTextField campo_endereco = new JTextField();
@@ -306,8 +330,8 @@ public class JInternal {
                 endereco.setBounds(70, 470, 500, 100);
                 endereco.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_endereco.setBounds(70, 550, 220, 40);
-                form.add(endereco);
-                form.add(campo_endereco);
+                telinha4.add(endereco);
+                telinha4.add(campo_endereco);
 
                 JLabel cidade = new JLabel();
                 JTextField campo_cidade = new JTextField();
@@ -315,8 +339,8 @@ public class JInternal {
                 cidade.setBounds(320, 470, 500, 100);
                 cidade.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_cidade.setBounds(320, 550, 150, 40);
-                form.add(cidade);
-                form.add(campo_cidade);
+                telinha4.add(cidade);
+                telinha4.add(campo_cidade);
 
                 JLabel estado = new JLabel();
                 JTextField campo_estado = new JTextField();
@@ -324,8 +348,8 @@ public class JInternal {
                 estado.setBounds(485, 470, 500, 100);
                 estado.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_estado.setBounds(485, 550, 55, 40);
-                form.add(estado);
-                form.add(campo_estado);
+                telinha4.add(estado);
+                telinha4.add(campo_estado);
 
                 JLabel cep = new JLabel();
                 JTextField campo_cep = new JTextField();
@@ -333,8 +357,8 @@ public class JInternal {
                 cep.setBounds(70, 570, 500, 100);
                 cep.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_cep.setBounds(70, 650, 220, 40);
-                form.add(cep);
-                form.add(campo_cep);
+                telinha4.add(cep);
+                telinha4.add(campo_cep);
 
                 JLabel setor = new JLabel();
                 JTextField campo_setor = new JTextField();
@@ -342,8 +366,8 @@ public class JInternal {
                 setor.setBounds(320, 570, 500, 100);
                 setor.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_setor.setBounds(320, 650, 220, 40);
-                form.add(setor);
-                form.add(campo_setor);
+                telinha4.add(setor);
+                telinha4.add(campo_setor);
 
                 JLabel cargo = new JLabel();
                 JTextField campo_cargo = new JTextField();
@@ -351,8 +375,8 @@ public class JInternal {
                 cargo.setBounds(70, 670, 500, 100);
                 cargo.setFont(new Font("Arial", Font.ITALIC, 17));
                 campo_cargo.setBounds(70, 750, 468, 40);
-                form.add(cargo);
-                form.add(campo_cargo);
+                telinha4.add(cargo);
+                telinha4.add(campo_cargo);
 
                 JButton botao = new JButton();
                 botao.setText("Enviar");
@@ -360,7 +384,7 @@ public class JInternal {
                 botao.setBounds(240, 840, 140, 50);
                 botao.setBackground(Color.BLUE);
                 botao.setForeground(Color.WHITE);
-                form.add(botao);
+                telinha4.add(botao);
 
                 form.setVisible(true);
             }
